@@ -1135,27 +1135,27 @@ PORT z80_port =
   /* tags for generic pointers */
   { 0x00, 0x40, 0x60, 0x80 },   /* far, near, xstack, code */
   {
-    "XSEG",
-    "STACK",
-    "CODE",
-    "DATA",
+    ".xseg",
+    ".stack",
+    ".text",
+    ".data",
     NULL,                       /* idata */
     NULL,                       /* pdata */
     NULL,                       /* xdata */
     NULL,                       /* bit */
-    "RSEG (ABS)",
-    "GSINIT",                   /* static initialization */
+    ".rseg",
+    ".gsinit",                   /* static initialization */
     NULL,                       /* overlay */
-    "GSFINAL",
-    "HOME",
+    ".gsfinal",
+    ".home",
     NULL,                       /* xidata */
     NULL,                       /* xinit */
     NULL,                       /* const_name */
-    "CABS (ABS)",               /* cabs_name */
-    "DABS (ABS)",               /* xabs_name */
+    ".cabs",               /* cabs_name */
+    ".dabs",               /* xabs_name */
     NULL,                       /* iabs_name */
-    "INITIALIZED",              /* name of segment for initialized variables */
-    "INITIALIZER",              /* name of segment for copies of initialized variables in code space */
+    ".initialized",              /* name of segment for initialized variables */
+    ".initializer",              /* name of segment for copies of initialized variables in code space */
     NULL,
     NULL,
     1,                          /* CODE  is read-only */

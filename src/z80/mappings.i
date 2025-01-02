@@ -466,13 +466,13 @@ static const ASM_MAPPING _gas_gb_mapping[] = {
     { "enter", "" },
     { "enters", "" },
     { "enterx", "add\tsp, #-%d" },
-    { "pusha", 
+    { "pusha",
       "push\taf\n"
       "push\tbc\n"
       "push\tde\n"
       "push\thl"
     },
-    { "popa", 
+    { "popa",
       "pop\thl\n"
       "pop\tde\n"
       "pop\tbc\n"
@@ -485,50 +485,50 @@ static const ASM_MAPPING _gas_gb_mapping[] = {
 };
 
 static const ASM_MAPPING _gas_z80_mapping[] = {
-    {"immed", "#"},
-    {"zero", "#0x00"},
-    {"one", "#0x01"},
-    {"area", ".area\t%s"},
-    {"areacode", ".area\t%s"},
-    {"areadata", ".area\t%s"},
-    {"areahome", ".area\t%s"},
+    {"immed", ""},
+    {"zero", "0x00"},
+    {"one", "0x01"},
+    {"area", ".section\t%s"},
+    {"areacode", ".section\t%s"},
+    {"areadata", ".section\t%s"},
+    {"areahome", ".section\t%s"},
     {"constbyte", "0x%02x"},
     {"constword", "0x%04x"},
-    {"immedword", "#0x%04x"},
-    {"immedbyte", "#0x%02x"},
-    {"hashedstr", "#%s"},
+    {"immedword", "0x%04x"},
+    {"immedbyte", "0x%02x"},
+    {"hashedstr", "%s"},
     {"bankimmeds", "%s >> 16"},
     { "*ixx", "%d (ix)" },
     { "*iyx", "%d (iy)" },
     { "*hl", "(hl)" },
     { "di", "di" },
     { "ei", "ei" },
-    { "ldahli", 
+    { "ldahli",
 		"ld\ta,(hl)\n"
 		"inc\thl" },
-    { "ldahld", 
+    { "ldahld",
 		"ld\ta,(hl)\n"
 		"dec\thl" },
-    { "lldahli", 
+    { "lldahli",
 		"ld\t(hl),a\n"
 		"inc\thl" },
-    { "lldahld", 
+    { "lldahld",
 		"ld\t(hl),a\n"
 		"dec\thl" },
-    { "ldahlsp", 
-		"ld\thl, #%d\n"
+    { "ldahlsp",
+		"ld\thl, %d\n"
 		"add\thl, sp" },
-    { "ldaspsp", 
-		"ld\tiy,#%d\n"
+    { "ldaspsp",
+		"ld\tiy,%d\n"
 		"add\tiy,sp\n"
 		"ld\tsp,iy" },
     { "mems", "(%s)" },
-    { "enter", 
+    { "enter",
 		"push\tix\n"
-		"ld\tix,#0\n"
+		"ld\tix,0\n"
 		"add\tix,sp" },
     { "enters", "call\t___sdcc_enter_ix\n" },
-    { "pusha", 
+    { "pusha",
       		"push\taf\n"
       		"push\tbc\n"
       		"push\tde\n"
